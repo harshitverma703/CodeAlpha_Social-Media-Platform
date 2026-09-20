@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturn • Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/logoimg.png" alt="Saturn logo">
+        <span>Saturn</span>
+      </a>
+
+      <nav class="nav-actions">
+        <a id="homeProfileLink" class="btn btn-secondary" href="index.html">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+        <button id="logoutBtn" class="btn btn-primary">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="profileContent">
+    <section class="card">
+      <div class="cover">
+        <img src="images/coverimg.jpg" alt="Cover image">
+      </div>
+
+      <div class="profile-main">
+        <div class="profile-head">
+          <div class="profile-info">
+            <img id="profileAvatar" class="avatar large" src="images/logoimg.png" alt="Profile avatar">
+            <div>
+              <div id="profileName" class="profile-name">Loading...</div>
+              <div id="profileUsername" class="username">@loading</div>
+              <div id="profileBio" class="profile-bio"></div>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button id="editBtn" class="btn btn-secondary hidden">Edit Profile</button>
+            <button id="followBtn" class="btn btn-primary hidden">Follow</button>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong id="postsCount">0</strong>
+            <span>Posts</span>
+          </div>
+          <div class="stat">
+            <strong id="followersCount">0</strong>
+            <span>Followers</span>
+          </div>
+          <div class="stat">
+            <strong id="followingCount">0</strong>
+            <span>Following</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px;">
+      <h2 class="page-title">Posts</h2>
+      <p class="page-subtitle">Latest posts from this profile.</p>
+      <div id="profilePosts"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

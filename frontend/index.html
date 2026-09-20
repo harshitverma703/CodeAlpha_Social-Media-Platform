@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturn • Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/logoimg.png" alt="Saturn logo">
+        <span>Saturn</span>
+      </a>
+
+      <nav class="nav-actions">
+        <a class="btn btn-secondary" data-profile-link href="profile.html">
+          <i class="fa-regular fa-user"></i>
+          Profile
+        </a>
+        <button id="logoutBtn" class="btn btn-primary">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-grid">
+      <aside>
+        <div class="card sidebar-card">
+          <div class="mini-user">
+            <img id="sidebarAvatar" class="avatar" src="images/logoimg.png" alt="Avatar">
+            <div>
+              <strong id="sidebarName">Saturn User</strong>
+              <span id="sidebarUsername" class="username">@user</span>
+            </div>
+          </div>
+
+          <div class="side-title">Explore</div>
+          <a class="side-link active" href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+          <a class="side-link" data-profile-link href="profile.html">
+            <i class="fa-regular fa-user"></i>
+            My Profile
+          </a>
+          <div id="sidebarBio" class="muted" style="margin-top:14px;"></div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="card create-card">
+          <h2 style="margin-bottom:12px;">What's happening?</h2>
+          <form id="createPostForm">
+            <div class="create-box">
+              <textarea id="postContent" placeholder="Share something with Saturn..." required></textarea>
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Post
+              </button>
+            </div>
+
+             
+          </form>
+        </div>
+
+        <div id="feed"></div>
+      </section>
+
+      <aside>
+        <div class="card sidebar-card">
+          <div class="right-title">About Saturn</div>
+          <p class="muted">
+            A simple social space to share posts, connect with people, and build your own profile and share your thoughts with the world. developed by <strong>Harshit Verma</strong>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+<footer class="site-footer">
+    <div class="footer-content">
+        <h3>About the Developer</h3>
+
+        <p>
+            Saturn is a social media web application developed by
+            <strong>Harshit Verma</strong>, a 3rd Year CSE student at SISTec Ratibad.
+        </p>
+
+        <a
+            href="https://www.linkedin.com/in/harshit-verma-4a6b67350/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Connect with me on LinkedIn
+        </a>
+
+        <p class="footer-copy">
+            © 2026 Harshit Verma · Saturn
+        </p>
+    </div>
+</footer>
+  <script src="js/api.js"></script>
+  <script src="js/feed.js"></script>
+</body>
+</html>
