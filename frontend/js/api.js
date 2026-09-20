@@ -1,10 +1,7 @@
 // Use the Express server for API requests in both modes:
 // 1) Live Server: http://127.0.0.1:5500/frontend/...
 // 2) Express:    http://localhost:5000/...
-const API_BASE = window.location.port === "5500"
-  ? "http://localhost:5000/api"
-  : "/api";
-
+const API_BASE = "https://codealphasocial-media-platform-production.up.railway.app/api";
 function getToken() {
   return localStorage.getItem("saturn_token");
 }
