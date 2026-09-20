@@ -29,6 +29,7 @@ app.use("/api/likes", likeRoutes);
 app.get("/api/health", async (req, res) => {
   try {
     await pool.query("SELECT 1");
+
     res.json({
       status: "ok",
       database: "connected"
@@ -38,7 +39,8 @@ app.get("/api/health", async (req, res) => {
 
     res.status(500).json({
       status: "error",
-      database: "disconnected"
+      database: "disconnected",
+      error: error.message
     });
   }
 });
