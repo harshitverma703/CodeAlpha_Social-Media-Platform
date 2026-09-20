@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -18,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
@@ -25,21 +25,24 @@ app.use("/api/comments", commentRoutes);
 app.use("/api/follows", followRoutes);
 app.use("/api/likes", likeRoutes);
 
-app.use(express.static(path.join(__dirname, "..", "frontend")));
-
+// Health check
 app.get("/api/health", async (req, res) => {
   try {
     await pool.query("SELECT 1");
-    res.json({ status: "ok", database: "connected" });
+    res.json({
+      status: "ok",
+      database: "connected"
+    });
   } catch (error) {
-    res.status(500).json({ status: "error", database: "disconnected" });
+    console.error("Health DB error:", error);
+
+    res.status(500).json({
+      status: "error",
+      database: "disconnected"
+    });
   }
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
-});
-
 app.listen(PORT, () => {
-  console.log(`Saturn is running at http://localhost:${PORT}`);
+  console.log(`Saturn backend running on port ${PORT}`);
 });
