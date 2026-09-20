@@ -35,12 +35,13 @@ app.get("/api/health", async (req, res) => {
       database: "connected"
     });
   } catch (error) {
-    console.error("Health DB error:", error);
+    console.error("DATABASE ERROR:", error);
 
     res.status(500).json({
       status: "error",
       database: "disconnected",
-      error: error.message
+      error: error.message || String(error),
+      code: error.code || null
     });
   }
 });
